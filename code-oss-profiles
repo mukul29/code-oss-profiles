@@ -1,0 +1,27 @@
+#! /bin/bash
+
+PROFILE_PATH="$HOME/.config/code-oss-profiles/profiles.json"
+
+while getopts :p: option
+do
+case "${option}"
+in
+p) PROFILE=${OPTARG};;
+esac
+done
+
+installed_extensions=( $(code-oss --list-extensions) )
+enabled_extensions=( $(jq -r ".$PROFILE.enabled_extensions[]" $PROFILE_PATH 2>/dev/null) )
+common_extensions=( $(jq -r "._common.enabled_extensions[]" $PROFILE_PATH 2>/dev/null) )
+
+enabled_extensions+=( "${common_extensions[@]}" )
+
+disabled_extensions=( $(echo ${installed_extensions[@]} ${enabled_extensions[@]} | tr ' ' '\n' | sort | uniq -u) )
+# declare -p disabled_extensions
+disable_argument=""
+
+for extension in "${disabled_extensions[@]}"; do
+    disable_argument+=" --disable-extension $extension "
+done
+
+code $disable_argument $@

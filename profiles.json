@@ -1,0 +1,51 @@
+{
+    "_common": {
+        "enabled_extensions": [
+            "vscodevim.vim",
+            "extr0py.vscode-relative-line-numbers",
+            "PKief.material-icon-theme",
+            "CoenraadS.bracket-pair-colorizer"
+        ]
+    },
+    "web_dev": {
+        "enabled_extensions": [
+            "abusaidm.html-snippets",
+            "ecmel.vscode-html-css",
+            "Gruntfuggly.todo-tree",
+            "Zignd.html-css-class-completion"
+        ]
+    },
+    "godot": {
+        "enabled_extensions": [
+            "geequlim.godot-tools"
+        ]
+    },
+    "octave": {
+        "enabled_extensions": [
+            "toasty-technologies.octave"
+        ]
+    },
+    "text": {
+        "enabled_extensions": []
+    },
+    "java": {
+        "enabled_extensions": [
+            "redhat.java"
+        ]
+    },
+    "cpp": {
+        "enabled_extensions": [
+            "ms-vscode.cpptools"
+        ]
+    },
+    "markdown": {
+        "enabled_extensions": [
+            "shd101wyy.markdown-preview-enhanced"
+        ]
+    },
+    "python": {
+        "enabled_extensions": [
+            "ms-python.python"
+        ]
+    }
+}
